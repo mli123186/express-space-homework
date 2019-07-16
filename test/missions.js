@@ -11,8 +11,8 @@ describe('mission routes', function(){
             .expect(200)
             .expect((response)=>{
                 const $ = cheerio.load(response.text);
-                $('.missions li:first-child').text().should.be.eq('Curiosity')
-                $('.missions li:last-child').text().should.be.eq('Rosetta');
+                $('.missions li:first-child').text().trim().should.be.eq('Curiosity')
+                $('.missions li:last-child').text().trim().should.be.eq('Rosetta');
             })
             .end(done);
     })
